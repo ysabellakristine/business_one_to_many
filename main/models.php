@@ -12,9 +12,7 @@ function insertToyReseller($pdo, $username, $first_name, $last_name, $gender, $a
 	}
 }
 
-
-
-function updateToyResller($pdo, $username, $first_name, $last_name, $gender, $age, $date_of_birth, $location, $toy_reseller_id) {
+function updateToyReseller($pdo, $username, $first_name, $last_name, $gender, $age, $date_of_birth, $location, $toy_reseller_id) {
 
 	$sql = "UPDATE toy_resellers
 				SET first_name = ?,
@@ -33,7 +31,6 @@ function updateToyResller($pdo, $username, $first_name, $last_name, $gender, $ag
 
 }
 
-
 function deleteToys($pdo, $toy_reseller_id) {
 	$deleteToys = "DELETE FROM toys WHERE toy_reseller_id = ?";
 	$deleteStmt = $pdo->prepare($deleteToys);
@@ -51,9 +48,6 @@ function deleteToys($pdo, $toy_reseller_id) {
 	}
 	
 }
-
-
-
 
 function getAllToyResellers($pdo) {
 	$sql = "SELECT * FROM toy_resellers";
@@ -75,10 +69,6 @@ function getToyResellerByID($pdo, $toy_reseller_id) {
 	}
 }
 
-
-
-
-
 function getToysByToyReseller($pdo, $toy_reseller_id) {
 	
 	$sql = "SELECT 
@@ -99,7 +89,6 @@ function getToysByToyReseller($pdo, $toy_reseller_id) {
 		return $stmt->fetchAll();
 	}
 }
-
 
 function insertToys($pdo, $toy_name, $toy_type, $toy_reseller_id) {
 	$sql = "INSERT INTO toys (toy_name, toy_type, toy_reseller_id) VALUES (?,?,?)";
@@ -154,3 +143,4 @@ function deletetoy($pdo, $toy_id) {
 }
 
 ?>
+
